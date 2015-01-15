@@ -29,8 +29,9 @@ Usage of Service
 
 ```ruby
 {"app_domain":"encrypted.google.com"}
-
+```
 Curl Request Example.
+
 curl --header "Content-Type: application/json" --data '{"app_domain":"www.google.com"}' http://localhost:9292/v1/registration
 
 ### Job Request
@@ -56,7 +57,6 @@ You can do following operations on Videos
 * Change the video format
 * Video bitrate
 * Split
-* 
 
 ##### Supported video formats
 * mp4
