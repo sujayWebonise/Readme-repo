@@ -31,26 +31,26 @@ Curl Request Example.
 ```
 curl --header "Content-Type: application/json" --data '{"app_domain":"www.google.com"}' http://localhost:9292/v1/registration
 ```
-#### Job Request
+### Job Request
 
 The service supports 2 types of job requests.
 
 1. Image processing request
 2. Video processing request
 
-### You can do following operations on Images
+#### You can do following operations on Images
 * Crop
 * Change Resolution
 * Thumbnail
 * Rotate
 * Scale
 
-### Supported image formats
+#### Supported image formats
 * jpg/jpeg
 * png
 * gif
 
-### You can do following operations on Videos
+#### You can do following operations on Videos
 * Change the resolution
 * Change the video format
 * Video bit-rate
