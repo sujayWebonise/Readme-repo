@@ -1,6 +1,6 @@
 
-Documment For API's
-===================
+Documentation For End Point API's
+=================================
 
 1. Registration for service
 2. Job request for application
@@ -13,9 +13,9 @@ To register your application with the service you will need to pass a CURL reque
 Usage of Service
 ----------------
 
-### API End Points:
+### API End Point:
 
-| Method | End-Points       | Usage                                              | Returns                                                  |
+| Method | End-Point        | Usage                                              | Returns                                                  |
 |--------|------------------|----------------------------------------------------|----------------------------------------------------------|
 | POST	 | /v1/registration	| Registration of you application to voodoo service. | Access key for accessing service(API-KEY)                |
 
@@ -52,13 +52,13 @@ The service supports 2 types of job requests.
 * png
 * gif
 
-You can do following operations on Videos
+####You can do following operations on Videos
 * Change the resolution
 * Change the video format
 * Video bitrate
 * Split
 
-##### Supported video formats
+#### Supported video formats
 * mp4
 * avi
 * ogg
@@ -73,8 +73,8 @@ You can do following operations on Videos
 Usage of Service
 ----------------
 
-### API End Points:
-| METHOD | End-Points       | Usage                                              | Returns                                                  |
+### API End Point:
+| METHOD | End-Point        | Usage                                              | Returns                                                  |
 |--------|------------------|----------------------------------------------------|----------------------------------------------------------|
 | POST	 | /v1/create/job	| To submit a Job to service for process.            | Destination Url from where to collect your processed job |
 
@@ -101,3 +101,7 @@ Usage of Service
 }
 ```
 
+Curl Request Example
+```
+curl --header "Content-Type: application/json" --data '{"api_key":"bbeb4924d066922f", "src_url": "http://www.imagica.com/pathtomedia.jpg", "actions": {"resize": 50000, "quality": 50}, "notification_url": "http://www.imagica.com/notificationpath"}' -X POST http://localhost:9292/v1/create/job
+```
