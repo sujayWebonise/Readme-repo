@@ -6,15 +6,49 @@ Documment For API's
 2. Job request for application
 
 
-#### Registration
+### Registration
 
 To register your application with the service you will need to pass a CURL request to the 
 service.The curl request must contain Header "Content-Type" which can be either json/xml,body part contains a hash 
 which will contain domain name which you want to register with service and the API end point.For eg.
 
-curl --header "Content-Type: application/json" --data '{"app_domain":"www.imagica.com"}' http://localhost:9292/v1/registration
+Usage of Service
+----------------
 
-##### Job Request
+### API End Points:
+
+| METHOD | End-Points       | Usage                                              | Returns                                                  |
+|--------|------------------|----------------------------------------------------|----------------------------------------------------------|
+| POST	 | /v1/registration	| Registration of you application to voodoo service. | Access key for accessing service(API-KEY)                |
+
+### API-End Points and Parameters
+#### For end point /v1/registration
+|    Key   |Description                                          |
+|----------|-----------------------------------------------------|
+|app_domain| name of the domain you want to register into service|
+
+* Example
+
+```ruby
+{"app_domain":"encrypted.google.com"}
+
+For eg.
+curl --header "Content-Type: application/json" --data '{"app_domain":"www.google.com"}' http://localhost:9292/v1/registration
+
+### Job Request
+
+The service supports 2 types of job requests.
+1.Image processing request
+2.Video processing request
+
+#### You can do following operations on Images
+* Crop
+* Change Resolution
+* Thumbnail
+* Rotate
+* Scale
+
+#### Supported image formats
 * jpg/jpeg
 * png
 * gif
@@ -44,8 +78,7 @@ Usage of Service
 ### API End Points:
 | METHOD | End-Points       | Usage                                              | Returns                                                  |
 |--------|------------------|----------------------------------------------------|----------------------------------------------------------|
-| POST	 | /v1/registration	| Registration of you application to voodoo service. | Access key for accessing service(API-KEY)                |
-| POST	 | /v1/create/job	| To submit a Job to service for process.            | Destination Url from where to collect your processes job |
+| POST	 | /v1/create/job	| To submit a Job to service for process.            | Destination Url from where to collect your processed job |
 
 
 ### API-End Points and Parameters
@@ -63,10 +96,10 @@ Usage of Service
 #### For end point /v1/create/job
 |Key             |Description                                                            |
 |----------------|-----------------------------------------------------------------------|
-|api_key         | Provided at the time of registration of the you application to system.|
+|api_key         | Provided at the time of registration of the your application to system.|
 |source_url      | Source of the file needed to be transformed.                          |
 |notification_url| URL at which you need to be notified once job is complete.            |
-|actions         | list of all the transformation need to be performed on your file.     |
+|actions         | list of all the transformations need to be performed on your file.     |
 
 * Example
 
